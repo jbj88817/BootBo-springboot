@@ -1,4 +1,4 @@
-package us.bojie.bootbo;
+package us.bojie.bootbo.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

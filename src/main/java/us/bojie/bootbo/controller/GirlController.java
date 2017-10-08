@@ -1,4 +1,4 @@
-package us.bojie.bootbo;
+package us.bojie.bootbo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import us.bojie.bootbo.domain.Girl;
+import us.bojie.bootbo.repository.GirlRepository;
+import us.bojie.bootbo.service.GirlService;
 
 @RestController
 public class GirlController {

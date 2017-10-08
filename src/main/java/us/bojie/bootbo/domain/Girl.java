@@ -1,4 +1,4 @@
-package us.bojie.bootbo;
+package us.bojie.bootbo.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
