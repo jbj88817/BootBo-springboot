@@ -17,6 +17,9 @@ public class GirlController {
     @Autowired
     private GirlRepository mGirlRepository;
 
+    @Autowired
+    private GirlService mGirlService;
+
     // Find all girls
     @GetMapping(value = "/girls")
     public List<Girl> mGirlList(){
@@ -61,5 +64,10 @@ public class GirlController {
     @GetMapping(value = "girls/age/{age}")
     public List<Girl> girlListByAge(@PathVariable("age") Integer age) {
         return mGirlRepository.findByAge(age);
+    }
+
+    @PostMapping(value = "/girls/two")
+    public void girlTwo() {
+        mGirlService.insertTwo();
     }
 }
