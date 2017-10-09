@@ -17,9 +17,12 @@ import java.util.List;
 import javax.validation.Valid;
 
 import us.bojie.bootbo.domain.Girl;
+import us.bojie.bootbo.domain.Result;
 import us.bojie.bootbo.repository.GirlRepository;
 import us.bojie.bootbo.service.GirlService;
+import us.bojie.bootbo.utils.ResultUtil;
 
+@SuppressWarnings("ALL")
 @RestController
 public class GirlController {
 
@@ -39,15 +42,15 @@ public class GirlController {
     }
 
     @PostMapping(value = "/girls")
-    public Girl girlAdd(@Valid Girl girl, BindingResult bindingResult) {
+    public Result<Girl> girlAdd(@Valid Girl girl, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-            return null;
+            return ResultUtil.error(1, bindingResult.getFieldError().getDefaultMessage());
         }
+
         girl.setCupSize(girl.getCupSize());
         girl.setAge(girl.getAge());
 
-        return mGirlRepository.save(girl);
+        return ResultUtil.success(mGirlRepository.save(girl));
     }
 
     @GetMapping(value = "/girls/{id}")
