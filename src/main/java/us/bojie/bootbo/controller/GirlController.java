@@ -29,7 +29,8 @@ public class GirlController {
 
     // Find all girls
     @GetMapping(value = "/girls")
-    public List<Girl> mGirlList(){
+    public List<Girl> girlList(){
+        System.out.println("girlList");
         return mGirlRepository.findAll();
     }
 
