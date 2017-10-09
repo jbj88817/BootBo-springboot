@@ -3,6 +3,7 @@ package us.bojie.bootbo.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 
 @Entity
 public class Girl {
@@ -12,6 +13,7 @@ public class Girl {
 
     private String cupSize;
 
+    @Min(value = 18, message = "Forbid under 18")
     private Integer age;
 
     public Girl() {
