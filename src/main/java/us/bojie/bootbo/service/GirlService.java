@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import us.bojie.bootbo.domain.Girl;
+import us.bojie.bootbo.enums.ResultEnum;
 import us.bojie.bootbo.exception.GirlException;
 import us.bojie.bootbo.repository.GirlRepository;
 
@@ -31,9 +32,9 @@ public class GirlService {
         Girl girl = mGirlRepository.findOne(id);
         Integer age = girl.getAge();
         if (age < 10) {
-            throw new GirlException(100, "You're at element");
+            throw new GirlException(ResultEnum.PRIMARY_SCHOOL);
         } else if (age > 10 && age < 16) {
-            throw new GirlException(101, "You're at mid-school");
+            throw new GirlException(ResultEnum.MIDDEL_SCHOOL);
         }
     }
 }
