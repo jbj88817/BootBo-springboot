@@ -86,4 +86,9 @@ public class GirlController {
     public void girlTwo() {
         mGirlService.insertTwo();
     }
+
+    @GetMapping(value = "girls/getAge/{id}")
+    public void getAge(@PathVariable("id") Integer id) throws Exception {
+        mGirlService.getAge(id);
+    }
 }

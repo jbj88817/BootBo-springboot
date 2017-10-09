@@ -5,7 +5,6 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,7 +16,7 @@ public class Girl {
     @NotBlank(message = "cannot be null")
     private String cupSize;
 
-    @Min(value = 18, message = "Forbid under 18")
+//    @Min(value = 18, message = "Forbid under 18")
     private Integer age;
 
     @NotNull(message = "Money cannot be null")
